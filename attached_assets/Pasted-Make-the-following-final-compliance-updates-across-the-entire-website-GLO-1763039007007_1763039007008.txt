@@ -1,0 +1,144 @@
+Make the following final compliance updates across the entire website:
+
+=====================
+GLOBAL (ALL PAGES)
+=====================
+
+1. Age Gate:
+   - Show the age verification popup ONLY on:
+     • homepage / offerwall pages
+     • any brand details pages
+     • /out redirect pages
+   - DO NOT show the age gate on legal pages:
+     • /privacy
+     • /terms
+     • /responsible-gambling
+     • /about
+     • /contact
+
+2. Add the company identity line to footer of ALL pages:
+   "TheCasinos.live is owned and operated by Migo Media Private Limited (India)."
+
+3. Ensure affiliate disclosure is visible on homepage (top or near brand list):
+   "We may receive affiliate commissions when you sign up via our links. 
+    Our reviews and rankings remain independent."
+
+=====================
+FOOTER
+=====================
+
+Ensure footer shows these links on every page:
+About | Terms | Privacy | Responsible Gambling | Contact
+
+And add:
+© 2025 TheCasinos.live | 18+ Only | Play Responsibly
+TheCasinos.live is owned and operated by Migo Media Private Limited (India).
+
+=====================
+TERMS OF USE PAGE
+=====================
+
+Add under footer/company identity (if not already):
+"TheCasinos.live is owned and operated by Migo Media Private Limited (India)."
+
+(Optional recommended line below section 3):
+"We do not provide gambling services and do not accept player deposits."
+
+=====================
+PRIVACY POLICY PAGE
+=====================
+
+1. Add direct contact email under Contact Us section:
+"You can also reach us at contact@thecasinos.live"
+
+2. Add company identity under footer:
+"TheCasinos.live is owned and operated by Migo Media Private Limited (India)."
+
+3. (Optional recommended line under Cookies)
+"We do not collect any financial or gambling-related information."
+
+=====================
+RESPONSIBLE GAMBLING PAGE
+=====================
+
+1. Add Canada-specific support service:
+"ConnexOntario – Free, confidential support for problem gambling in Canada:
+ https://www.connexontario.ca/"
+
+2. Add company identity at bottom:
+"TheCasinos.live is owned and operated by Migo Media Private Limited (India)."
+
+=====================
+ABOUT PAGE
+=====================
+
+Add this section under "Who We Are" or before footer:
+"TheCasinos.live is owned and operated by Migo Media Private Limited (India)."
+
+=====================
+CONTACT PAGE
+=====================
+
+Add company identity under email line:
+"TheCasinos.live is owned and operated by Migo Media Private Limited (India)."
+
+Make sure contact email shown is:
+contact@thecasinos.live
+
+=====================
+OFFERWALL BRAND CARDS
+=====================
+
+For EVERY brand card, update license lines to correct ones:
+
+10bet:
+"Licensed and regulated by the Malta Gaming Authority (MGA/B2C/331/2016)."
+
+1Red:
+"Licensed and regulated under Curaçao eGaming Authority (8048/JAZ)."
+
+CoolZino:
+"Licensed and regulated under Curaçao eGaming Authority (8048/JAZ)."
+
+DragonSlots:
+"Licensed and regulated under Curaçao eGaming Authority (8048/JAZ)."
+
+ChilliStakes:
+"Licensed and regulated under Curaçao eGaming Authority (365/JAZ)." 
+(If license number differs, correct it using brand footer.)
+
+AllySpin:
+"Licensed and regulated under Curaçao eGaming Authority (8048/JAZ)."
+
+AND include this bonus disclaimer on each card:
+"New players only. 18+. Deposit & wagering requirements apply. T&Cs apply."
+
+=====================
+/out REDIRECT PAGE
+=====================
+
+Update /out page to show:
+
+1. Brand name & logo
+2. Regulator
+3. License number
+4. License verification URL
+5. Bonus summary:
+   • New players only.
+   • Deposit required.
+   • Wagering applies.
+   • 18+ Only. Play Responsibly.
+6. Large button: “Proceed to Official Site”
+7. No auto-redirection — user must click.
+8. Age gate must apply here.
+
+=====================
+TECHNICAL CHECKS
+=====================
+
+1. All legal pages return HTTP 200 without age gate blocking.
+2. No auto-redirects anywhere on the site.
+3. No cloaking — same HTML for Googlebot and users.
+4. All footer links open correctly.
+5. /out must log click event then redirect.
+6. Make sure brand data is correctly added into brands config.

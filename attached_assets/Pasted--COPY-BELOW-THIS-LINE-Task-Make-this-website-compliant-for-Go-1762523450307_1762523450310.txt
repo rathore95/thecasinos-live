@@ -1,0 +1,82 @@
+================= COPY BELOW THIS LINE =================
+
+Task: Make this website compliant for Google Gambling Ads certification as an affiliate comparison website (not a casino operator). Do NOT use cloaking. The same HTML must be shown to users and Googlebots. Apply all of the following changes:
+
+A) Add Age Verification
+1. Create a blocking age verification modal.
+2. The modal must appear before the main page is usable.
+3. Buttons:
+   - “I am 18+” → set cookie age_confirmed=1 (12h expiry) and close modal.
+   - “No / Leave” → redirect to https://www.google.com.
+4. If age_confirmed cookie is missing → modal stays open and page is blocked.
+
+B) Create Footer Legal Pages (these must be **real** pages with content, linked site-wide):
+   /privacy
+   /terms
+   /responsible-gambling
+   /about
+   /contact
+
+Footer must show:
+© 2025 TheCasinos.live | 18+ Only | Play Responsibly
+Links: About | Terms | Privacy | Responsible Gambling | Contact
+
+C) Affiliate Disclosure (must be visible)
+Add site-wide near header + footer:
+“We may receive commissions when you sign up via our links. Our rankings and opinions are independent.”
+
+D) Offerwall and Redirect Flow
+1. Every brand card button should link to:
+   /out?brand=BRAND_SLUG
+   (No direct affiliate links on the offerwall.)
+
+2. Create a new /out page:
+   - Read ?brand parameter.
+   - Look up brand data from a brand config (JSON/JS object).
+   - Display:
+       • Brand name & logo
+       • License Authority + License Number + Verification URL
+       • Bonus summary terms (e.g., New customers only, 18+, wagering applies)
+       • Button: “Proceed to Official Site”
+   - When button clicked:
+       Log click (brand + timestamp) then redirect to brand.affiliateUrl.
+   - No automatic redirect. User must click manually.
+
+E) Brand Card Requirements (on homepage/offerwall)
+Each card must display:
+- Licensed by <Regulator> (License #)
+- “New players only. 18+. Bonus subject to wagering. T&Cs apply.”
+
+F) Brand Config File Example (store as brands.json or JS export):
+[
+  {
+    "slug": "richprize",
+    "name": "RichPrize Casino",
+    "logo": "/assets/richprize.png",
+    "affiliateUrl": "YOUR_AFFILIATE_LINK",
+    "license": {
+      "regulator": "Curacao eGaming",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://www.curacao-egaming.com/validate/..."
+    },
+    "bonusSummary": "18+ only. New customers. Min deposit. Wagering applies. T&Cs apply."
+  }
+]
+
+G) Technical Requirements
+- No auto-redirects anywhere.
+- No blocked content for Googlebot.
+- No pop-ups that trap user.
+- All pages return HTTP 200.
+- Works on mobile and desktop with no JS errors.
+
+H) Acceptance Test (must pass before we stop)
+1. Fresh browser → homepage opens with age-gate blocking view.
+2. After confirming age → offerwall is visible.
+3. Clicking a brand → goes to /out?brand=…
+4. /out displays license + bonus details and a Proceed button.
+5. Only after clicking Proceed → user is sent to affiliate link.
+6. Footer pages open and contain real text content.
+7. Affiliate disclosure visible.
+
+================= COPY ABOVE THIS LINE =================
