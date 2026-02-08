@@ -1,12 +1,23 @@
 {
+  "routes": [
+    { "route": "/about", "rewrite": "/about.html" },
+    { "route": "/terms", "rewrite": "/terms.html" },
+    { "route": "/privacy", "rewrite": "/privacy.html" },
+    { "route": "/responsible-gambling", "rewrite": "/responsible-gambling.html" },
+    { "route": "/contact", "rewrite": "/contact.html" },
+    { "route": "/out", "rewrite": "/out.html" }
+  ],
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": [
-      "casinos.json",
-      "images/*",
-      "attached_assets/*",
-      "*.css",
-      "*.js"
-    ]
+    "exclude": ["/*.{css,js,json,png,jpg,jpeg,gif,svg,ico,woff,woff2,ttf}"]
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-cache"
   }
 }

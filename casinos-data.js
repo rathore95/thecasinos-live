@@ -1,0 +1,406 @@
+window.CASINOS_DATA = [
+  {
+    "id": 1,
+    "name": "Mega Bonanza",
+    "logo": "images/logo1.png",
+    "offer": "150% on First Purchase Up To GC 600K + SC 303 FREE",
+    "link": "https://brand1.com",
+    "games": "Slots, Table Games, Live Casino",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-cc-paypal"
+    ],
+    "bonus": "150% + Free Spins",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "US",
+      "CA",
+      "GB",
+      "AU",
+      "NZ"
+    ],
+    "license": {
+      "regulator": "Malta Gaming Authority",
+      "number": "MGA/B2C/331/2016",
+      "verificationUrl": "https://www.mga.org.mt/licensee-register"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Sweepnext",
+    "logo": "images/logo2.png",
+    "offer": "Welcome Offer: 400K GC + 40 Free SC + 5 Free Spins",
+    "link": "https://brand2.com",
+    "games": "Slots, Blackjack, Roulette",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-cc-stripe"
+    ],
+    "bonus": "400K GC + 5 FS",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "US",
+      "CA",
+      "GB"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 3,
+    "name": "SpinRush",
+    "logo": "images/logo3.png",
+    "offer": "Deposit Match: 200% up to $500 + 20 Free Spins",
+    "link": "https://brand3.com",
+    "games": "Live Casino, Baccarat, Slots",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-apple-pay",
+      "fab fa-cc-amazon-pay"
+    ],
+    "bonus": "200% + 20 FS",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "IN",
+      "PK",
+      "BD",
+      "LK",
+      "NP"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 4,
+    "name": "GoldPlays",
+    "logo": "images/logo4.png",
+    "offer": "Exclusive Bonus: 100 Free Spins + $200 Match",
+    "link": "https://brand4.com",
+    "games": "Slots, Poker, Live Casino",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-cc-paypal"
+    ],
+    "bonus": "100 FS + $200",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "CA",
+      "AU",
+      "NZ",
+      "ZA"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 5,
+    "name": "LuckyWin Casino",
+    "logo": "images/logo1.png",
+    "offer": "Welcome Bonus: 300% up to $3000 + 50 Free Spins",
+    "link": "https://brand5.com",
+    "games": "Slots, Poker, Live Dealer",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-bitcoin"
+    ],
+    "bonus": "300% + 50 FS",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "GB",
+      "IE",
+      "DE",
+      "FR",
+      "IT",
+      "ES"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "365/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Mega Jackpot",
+    "logo": "images/logo2.png",
+    "offer": "First Deposit Bonus: 250% up to $2500",
+    "link": "https://brand6.com",
+    "games": "Slots, Blackjack, Roulette, Baccarat",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-cc-paypal"
+    ],
+    "bonus": "250% Match",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "US",
+      "MX",
+      "BR",
+      "AR",
+      "CL"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Royal Spins",
+    "logo": "images/logo3.png",
+    "offer": "Exclusive: 500K GC + 100 Free SC",
+    "link": "https://brand7.com",
+    "games": "Slots, Video Poker, Table Games",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-amex",
+      "fab fa-cc-discover"
+    ],
+    "bonus": "500K GC",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "IN",
+      "TH",
+      "MY",
+      "SG",
+      "PH"
+    ],
+    "license": {
+      "regulator": "Malta Gaming Authority",
+      "number": "MGA/B2C/331/2016",
+      "verificationUrl": "https://www.mga.org.mt/licensee-register"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Diamond Casino",
+    "logo": "images/logo4.png",
+    "offer": "VIP Bonus: 400% up to $4000 + 100 FS",
+    "link": "https://brand8.com",
+    "games": "Live Casino, Slots, Jackpots",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-cc-paypal"
+    ],
+    "bonus": "400% + 100 FS",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "CA",
+      "GB",
+      "AU",
+      "NZ",
+      "IE"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Fortune Palace",
+    "logo": "images/logo1.png",
+    "offer": "Welcome Package: $5000 + 200 Free Spins",
+    "link": "https://brand9.com",
+    "games": "Slots, Roulette, Live Games",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-bitcoin"
+    ],
+    "bonus": "$5000 + 200 FS",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "DE",
+      "AT",
+      "CH",
+      "NL",
+      "BE",
+      "LU"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Vegas Nights",
+    "logo": "images/logo2.png",
+    "offer": "New Player Offer: 350% up to $3500",
+    "link": "https://brand10.com",
+    "games": "Slots, Craps, Blackjack, Poker",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-cc-amex"
+    ],
+    "bonus": "350% Match",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "US",
+      "CA"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Crown Casino",
+    "logo": "images/logo3.png",
+    "offer": "First Deposit: 200% up to $2000 + 75 FS",
+    "link": "https://brand11.com",
+    "games": "Slots, Live Dealer, Table Games",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-cc-paypal"
+    ],
+    "bonus": "200% + 75 FS",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "IN",
+      "PK",
+      "BD",
+      "MY",
+      "SG"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "365/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Lucky Star",
+    "logo": "images/logo4.png",
+    "offer": "Mega Bonus: 600K GC + 200 SC FREE",
+    "link": "https://brand12.com",
+    "games": "Slots, Bingo, Live Casino",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-bitcoin"
+    ],
+    "bonus": "600K GC + 200 SC",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "AU",
+      "NZ",
+      "ZA",
+      "KE",
+      "NG"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Platinum Play",
+    "logo": "images/logo1.png",
+    "offer": "Welcome Bonus: 275% up to $2750",
+    "link": "https://brand13.com",
+    "games": "Slots, Roulette, Poker, Blackjack",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-cc-discover"
+    ],
+    "bonus": "275% Match",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "GB",
+      "IE",
+      "NO",
+      "SE",
+      "FI",
+      "DK"
+    ],
+    "license": {
+      "regulator": "Malta Gaming Authority",
+      "number": "MGA/B2C/331/2016",
+      "verificationUrl": "https://www.mga.org.mt/licensee-register"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Golden Reels",
+    "logo": "images/logo2.png",
+    "offer": "Exclusive Offer: 450K GC + 120 SC + 25 FS",
+    "link": "https://brand14.com",
+    "games": "Slots, Jackpots, Live Games",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-cc-paypal"
+    ],
+    "bonus": "450K GC + 25 FS",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "CA",
+      "MX",
+      "BR",
+      "AR",
+      "CO",
+      "PE"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  },
+  {
+    "id": 15,
+    "name": "Ace Casino",
+    "logo": "images/logo3.png",
+    "offer": "First Deposit: 300% up to $3000 + 150 FS",
+    "link": "https://brand15.com",
+    "games": "Slots, Table Games, Live Casino",
+    "payments": [
+      "fab fa-cc-visa",
+      "fab fa-cc-mastercard",
+      "fab fa-bitcoin"
+    ],
+    "bonus": "300% + 150 FS",
+    "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
+    "geos": [
+      "US",
+      "CA",
+      "GB",
+      "AU",
+      "NZ",
+      "ZA"
+    ],
+    "license": {
+      "regulator": "Curaçao eGaming Authority",
+      "number": "8048/JAZ",
+      "verificationUrl": "https://verification.curacao-egaming.com"
+    }
+  }
+];

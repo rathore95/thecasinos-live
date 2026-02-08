@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <script src="casinos-data.js"></script>
   <!-- SEO Meta Tags -->
   <title>Best Online Casino Reviews 2025 | TheCasinos.live - Independent Casino Reviews</title>
   <meta name="description" content="Independent reviews of the best online casinos in 2025. Compare bonuses, games, and payment methods. 18+ only. Gamble responsibly.">
@@ -511,6 +512,10 @@
 
     async function loadBrandsData() {
       try {
+        if (window.CASINOS_DATA) {
+          brands = window.CASINOS_DATA;
+          return true;
+        }
         const response = await fetch('/api/casinos');
         brands = await response.json();
         return true;
