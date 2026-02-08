@@ -2,11 +2,11 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": [
-      "/casinos.json",
-      "/images/*",
-      "/attached_assets/*",
-      "/*.css",
-      "/*.js"
+      "casinos.json",
+      "images/*",
+      "attached_assets/*",
+      "*.css",
+      "*.js"
     ]
   }
 }
