@@ -18,7 +18,8 @@
       "CA",
       "GB",
       "AU",
-      "NZ"
+      "NZ",
+      "IN"
     ],
     "license": {
       "regulator": "Malta Gaming Authority",
@@ -35,15 +36,15 @@
     "games": "Slots, Blackjack, Roulette",
     "payments": [
       "fab fa-cc-visa",
-      "fab fa-cc-mastercard",
-      "fab fa-cc-stripe"
+      "fab fa-cc-mastercard"
     ],
     "bonus": "400K GC + 5 FS",
     "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
     "geos": [
       "US",
       "CA",
-      "GB"
+      "GB",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -96,7 +97,8 @@
       "CA",
       "AU",
       "NZ",
-      "ZA"
+      "ZA",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -124,7 +126,8 @@
       "DE",
       "FR",
       "IT",
-      "ES"
+      "ES",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -151,7 +154,8 @@
       "MX",
       "BR",
       "AR",
-      "CL"
+      "CL",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -205,7 +209,8 @@
       "GB",
       "AU",
       "NZ",
-      "IE"
+      "IE",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -233,7 +238,8 @@
       "CH",
       "NL",
       "BE",
-      "LU"
+      "LU",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -257,7 +263,8 @@
     "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
     "geos": [
       "US",
-      "CA"
+      "CA",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -311,7 +318,8 @@
       "NZ",
       "ZA",
       "KE",
-      "NG"
+      "NG",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -328,8 +336,7 @@
     "games": "Slots, Roulette, Poker, Blackjack",
     "payments": [
       "fab fa-cc-visa",
-      "fab fa-cc-mastercard",
-      "fab fa-cc-discover"
+      "fab fa-cc-mastercard"
     ],
     "bonus": "275% Match",
     "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
@@ -339,7 +346,8 @@
       "NO",
       "SE",
       "FI",
-      "DK"
+      "DK",
+      "IN"
     ],
     "license": {
       "regulator": "Malta Gaming Authority",
@@ -367,7 +375,8 @@
       "BR",
       "AR",
       "CO",
-      "PE"
+      "PE",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -395,7 +404,8 @@
       "GB",
       "AU",
       "NZ",
-      "ZA"
+      "ZA",
+      "IN"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
