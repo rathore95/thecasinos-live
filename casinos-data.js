@@ -1,7 +1,7 @@
 window.CASINOS_DATA = [
   {
     "id": 1,
-    "name": "Mega Bonanza",
+    "name": "ChiliStakes",
     "logo": "images/logo1.png",
     "offer": "150% on First Purchase Up To GC 600K + SC 303 FREE",
     "link": "https://brand1.com",
@@ -29,7 +29,7 @@ window.CASINOS_DATA = [
   },
   {
     "id": 2,
-    "name": "Sweepnext",
+    "name": "10Bet",
     "logo": "images/logo2.png",
     "offer": "Welcome Offer: 400K GC + 40 Free SC + 5 Free Spins",
     "link": "https://brand2.com",
@@ -54,15 +54,13 @@ window.CASINOS_DATA = [
   },
   {
     "id": 3,
-    "name": "SpinRush",
+    "name": "AllySpin",
     "logo": "images/logo3.png",
     "offer": "Deposit Match: 200% up to $500 + 20 Free Spins",
     "link": "https://brand3.com",
     "games": "Live Casino, Baccarat, Slots",
     "payments": [
-      "fab fa-cc-visa",
-      "fab fa-cc-apple-pay",
-      "fab fa-cc-amazon-pay"
+      "fab fa-cc-visa"
     ],
     "bonus": "200% + 20 FS",
     "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
@@ -71,7 +69,8 @@ window.CASINOS_DATA = [
       "PK",
       "BD",
       "LK",
-      "NP"
+      "NP",
+      "GB"
     ],
     "license": {
       "regulator": "Curaçao eGaming Authority",
@@ -121,7 +120,6 @@ window.CASINOS_DATA = [
     "bonus": "300% + 50 FS",
     "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
     "geos": [
-      "GB",
       "IE",
       "DE",
       "FR",
@@ -192,7 +190,7 @@ window.CASINOS_DATA = [
   },
   {
     "id": 8,
-    "name": "Diamond Casino",
+    "name": "FlagMan",
     "logo": "images/logo4.png",
     "offer": "VIP Bonus: 400% up to $4000 + 100 FS",
     "link": "https://brand8.com",
@@ -341,7 +339,6 @@ window.CASINOS_DATA = [
     "bonus": "275% Match",
     "terms": "New players only. 18+. Deposit & wagering requirements apply. T&Cs apply.",
     "geos": [
-      "GB",
       "IE",
       "NO",
       "SE",
@@ -401,7 +398,6 @@ window.CASINOS_DATA = [
     "geos": [
       "US",
       "CA",
-      "GB",
       "AU",
       "NZ",
       "ZA",
