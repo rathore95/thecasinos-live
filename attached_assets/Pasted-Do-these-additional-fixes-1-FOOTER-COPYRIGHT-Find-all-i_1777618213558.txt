@@ -1,0 +1,63 @@
+Do these additional fixes:
+
+1. FOOTER COPYRIGHT
+Find all instances of "© 2025" anywhere in the codebase and 
+replace with "© 2026".
+
+2. REDIRECT PAGE COUNTDOWN
+On out.html, add a 5-second countdown timer that shows:
+"Redirecting in 5... 4... 3... 2... 1..."
+Then auto-redirects to the affiliate URL after 5 seconds.
+Also show a "Continue now →" link that skips the countdown 
+and redirects immediately.
+Keep the existing License Information and Important Terms 
+boxes exactly as they are.
+
+3. ALL GEO LANDING PAGES — BUTTON FIX
+On all 6 GEO pages (ca/fast-withdrawal, ca/welcome-bonus, 
+ca/crypto, nz/fast-withdrawal, nz/welcome-bonus, nz/no-kyc),
+make sure the "Visit Casino" button on each card goes to 
+/out?brand=X (the redirect/disclaimer page), NOT directly 
+to the external URL. This is required for Google Ads 
+compliance.
+
+4. SITEMAP
+Create a file at /sitemap.xml with these URLs:
+https://www.thecasinos.live/
+https://www.thecasinos.live/how-we-review
+https://www.thecasinos.live/ca/fast-withdrawal
+https://www.thecasinos.live/ca/welcome-bonus
+https://www.thecasinos.live/ca/crypto
+https://www.thecasinos.live/nz/fast-withdrawal
+https://www.thecasinos.live/nz/welcome-bonus
+https://www.thecasinos.live/nz/no-kyc
+https://www.thecasinos.live/review/chilistakes
+https://www.thecasinos.live/review/allyspin
+https://www.thecasinos.live/review/flagman
+
+Set lastmod to 2026-05-01 and changefreq to weekly for all.
+
+5. ROBOTS.TXT
+Create a file at /robots.txt:
+User-agent: *
+Allow: /
+Sitemap: https://www.thecasinos.live/sitemap.xml
+
+6. CONTACT PAGE
+The current contact is a hash anchor (#contact) on the 
+homepage. Create a real standalone page at /contact.html 
+with:
+- Page title: "Contact Us | TheCasinos.live"
+- H1: "Contact Us"
+- A working form with fields: Name, Email, Subject 
+  (dropdown: General Inquiry / Partnership / Review 
+  Request / Other), Message (textarea)
+- On submit show success message: "Thanks! We'll get 
+  back to you within 24 hours."
+- No backend needed, frontend confirmation only
+- Add /contact to server.js routes and 
+  staticwebapp.config.json
+- Update the nav "Contact" link to point to /contact 
+  instead of /#contact
+
+After completing, list every file created or modified.

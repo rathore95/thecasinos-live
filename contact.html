@@ -4,83 +4,191 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | TheCasinos.live</title>
+  <meta name="description" content="Get in touch with the TheCasinos.live editorial team. Questions, partnerships, or review requests — we read every message.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: 'Inter', Arial, sans-serif; }
-    header { background: #000; color: #fff; padding: 30px 0; }
-    footer { background: #000; color: #fff; padding: 30px 0; text-align: center; margin-top: 50px; }
-    footer a { color: #ff007f; text-decoration: none; }
-    .footer-links a { margin: 0 15px; color: #aaa; font-size: 0.9rem; }
-  
-    
-
+    body { font-family: 'Inter', Arial, sans-serif; background: #f8f9fa; }
+    .navbar { background: #000 !important; }
+    .navbar-brand { color: #fff !important; font-weight: 700; }
+    .nav-link { color: rgba(255,255,255,0.85) !important; }
+    .nav-link:hover { color: #ff007f !important; }
+    .age-bar { background: #dc3545; color: #fff; text-align: center; padding: 8px; font-size: 0.85rem; font-weight: 600; }
+    .hero { background: linear-gradient(135deg, #000 0%, #1a1a1a 100%); color: #fff; padding: 50px 0 35px; }
+    .breadcrumb-item a { color: #ff007f; text-decoration: none; }
+    .contact-card { background: #fff; border-radius: 12px; padding: 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .btn-submit { background: #ff007f; border: none; color: #fff; font-weight: 700; padding: 12px 36px; border-radius: 8px; font-size: 1rem; }
+    .btn-submit:hover { background: #cc0066; color: #fff; }
+    .info-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+    .info-icon { width: 40px; height: 40px; background: #fff0f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #ff007f; font-size: 1.1rem; flex-shrink: 0; }
+    .success-box { background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; padding: 20px; color: #155724; display: none; }
   </style>
 </head>
 <body>
-  
+  <div class="age-bar">18+ | Gambling can be addictive | Play Responsibly | T&Cs Apply</div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+      <a class="navbar-brand" href="/">thecasinos.live</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/#brands">Brands</a></li>
+          <li class="nav-item"><a class="nav-link" href="/how-we-review">How We Review</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Countries</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><h6 class="dropdown-header">Canada</h6></li>
+              <li><a class="dropdown-item" href="/ca/fast-withdrawal">⚡ Fast Withdrawal</a></li>
+              <li><a class="dropdown-item" href="/ca/welcome-bonus">💰 Best Bonus</a></li>
+              <li><a class="dropdown-item" href="/ca/crypto">₿ Crypto</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><h6 class="dropdown-header">New Zealand</h6></li>
+              <li><a class="dropdown-item" href="/nz/fast-withdrawal">⚡ Fast Withdrawal</a></li>
+              <li><a class="dropdown-item" href="/nz/welcome-bonus">💰 Best Bonus</a></li>
+              <li><a class="dropdown-item" href="/nz/no-kyc">🔓 No KYC</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active">Contact Us</li>
+        </ol>
+      </nav>
+      <h1 class="display-5 fw-bold">Contact Us</h1>
+      <p class="mt-2" style="color:#ccc;max-width:520px;">We read every message. Expect a reply within 24 hours on business days.</p>
+    </div>
   </div>
 
-  <header class="text-center">
-    <div class="container">
-      <h1><i class="fas fa-envelope"></i> Contact Us</h1>
-      <p><a href="/" style="color: #ff007f;">← Back to Home</a></p>
-    </div>
-  </header>
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="contact-card">
+          <h3 class="fw-bold mb-4">Send us a message</h3>
 
-  <div class="container my-5">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <h2>Get in Touch</h2>
-        <p>Have questions, feedback, or suggestions? We'd love to hear from you.</p>
+          <div id="successBox" class="success-box mb-4">
+            <i class="fas fa-check-circle me-2"></i><strong>Thanks! We'll get back to you within 24 hours.</strong>
+          </div>
 
-        <form id="contactForm" class="mt-4">
-          <div class="mb-3">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="name" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Your Email</label>
-            <input type="email" class="form-control" id="email" required>
-          </div>
-          <div class="mb-3">
-            <label for="subject" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="subject" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg">
-            <i class="fas fa-paper-plane me-2"></i>Send Message
-          </button>
-          <div id="formMessage" style="margin-top: 20px;"></div>
-        </form>
+          <form id="contactForm" novalidate>
+            <div class="mb-3">
+              <label for="name" class="form-label fw-semibold">Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="name" placeholder="Your full name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label fw-semibold">Subject <span class="text-danger">*</span></label>
+              <select class="form-select" id="subject" required>
+                <option value="" disabled selected>Select a subject</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Review Request">Review Request</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="message" class="form-label fw-semibold">Message <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Tell us what's on your mind..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit">
+              <i class="fas fa-paper-plane me-2"></i>Send Message
+            </button>
+          </form>
+        </div>
+      </div>
 
-        <div class="mt-5">
-          <h3>Other Ways to Reach Us</h3>
-          <p><i class="fas fa-envelope"></i> Email: <strong>contact@thecasinos.live</strong></p>
-          <p><i class="fas fa-info-circle"></i> For gambling addiction help, please visit our <a href="/responsible-gambling">Responsible Gambling</a> page.</p>
+      <div class="col-lg-5">
+        <div class="contact-card h-100">
+          <h4 class="fw-bold mb-4">Other ways to reach us</h4>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="fw-semibold">Email</div>
+              <div class="text-muted">contact@thecasinos.live</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-handshake"></i></div>
+            <div>
+              <div class="fw-semibold">Partnerships & Affiliates</div>
+              <div class="text-muted">partnerships@thecasinos.live</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <div class="fw-semibold">Response Time</div>
+              <div class="text-muted">Within 24 hours on business days</div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-life-ring"></i></div>
+            <div>
+              <div class="fw-semibold">Problem Gambling Help</div>
+              <div class="text-muted small">If you or someone you know needs help, visit our <a href="/responsible-gambling" style="color:#ff007f;">Responsible Gambling</a> page for free support resources.</div>
+            </div>
+          </div>
+
+          <div class="mt-4 p-3 rounded" style="background:#f8f9fa;font-size:0.85rem;color:#666;">
+            <strong>TheCasinos.live</strong> is owned and operated by<br>
+            Migo Media Private Limited (India)
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 TheCasinos.live | 18+ Only | Play Responsibly</p>
-      <p style="font-size: 0.9rem; margin-top: 10px;">TheCasinos.live is owned and operated by Migo Media Private Limited (India).</p>
-      <div class="footer-links">
-        <a href="/about">About</a>
-        <a href="/terms">Terms</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/responsible-gambling">Responsible Gambling</a>
-        <a href="/contact">Contact</a>
-      </div>
+  <footer class="bg-black text-white text-center py-4 mt-3">
+    <p style="font-size:0.85rem;">© 2026 TheCasinos.live | 18+ Only | Play Responsibly</p>
+    <p style="font-size:0.85rem;">TheCasinos.live is owned and operated by Migo Media Private Limited (India).</p>
+    <div style="margin-top:10px;">
+      <a href="/privacy" class="text-secondary me-3">Privacy Policy</a>
+      <a href="/terms" class="text-secondary me-3">Terms of Use</a>
+      <a href="/responsible-gambling" class="text-secondary me-3">Responsible Gambling</a>
+      <a href="/about" class="text-secondary me-3">About</a>
+      <a href="/contact" class="text-secondary">Contact</a>
     </div>
   </footer>
 
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value.trim();
 
+      if (!name || !email || !subject || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      document.getElementById('contactForm').style.display = 'none';
+      const box = document.getElementById('successBox');
+      box.style.display = 'block';
+      window.scrollTo({ top: box.offsetTop - 100, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

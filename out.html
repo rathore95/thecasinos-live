@@ -237,10 +237,9 @@
         </div>
 
         <div class="text-center mt-4">
-          <button class="btn btn-proceed" onclick="proceedToSite('${brand.link}', '${brand.name}', ${brand.id})">
-            <i class="fas fa-external-link-alt me-2"></i>Proceed to Official Site
-          </button>
-          <p class="text-muted mt-3"><small><i class="fas fa-shield-alt"></i> You will be redirected to ${brand.name} official website</small></p>
+          <p class="text-muted mb-1"><small><i class="fas fa-shield-alt"></i> You will be redirected to ${brand.name} official website</small></p>
+          <div id="countdownDisplay" style="font-size:1.4rem;font-weight:700;color:#ff007f;margin:10px 0;">Redirecting in <span id="countdownNum">5</span>...</div>
+          <a href="#" id="skipLink" onclick="skipCountdown()" style="font-size:1rem;color:#333;text-decoration:underline;">Continue now →</a>
         </div>
 
         <div class="back-link">
@@ -249,22 +248,50 @@
           </a>
         </div>
       `;
+
+      startCountdown(brand.link, brand.name, brand.id);
     }
 
-    function proceedToSite(url, name, id) {
-      console.log(`User clicked: ${name} (ID: ${id}) at ${new Date().toISOString()}`);
+    let countdownInterval = null;
+    let redirectUrl = null;
+
+    function startCountdown(url, name, id) {
+      redirectUrl = url;
+      let seconds = 5;
 
       if (url === 'https://example.com' || url.includes('example.com')) {
         console.warn(`TODO: Replace placeholder affiliate URL for brand ${id} (${name}) with real affiliate link`);
       }
-      
+
       if (typeof gtag !== 'undefined') {
-        gtag('event', 'casino_click', {
-          'casino_name': name,
-          'casino_id': id
-        });
+        gtag('event', 'casino_click', { 'casino_name': name, 'casino_id': id });
       }
-      
+
+      countdownInterval = setInterval(() => {
+        seconds--;
+        const el = document.getElementById('countdownNum');
+        if (el) el.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(countdownInterval);
+          window.location.href = url;
+        }
+      }, 1000);
+    }
+
+    function skipCountdown() {
+      if (countdownInterval) clearInterval(countdownInterval);
+      if (redirectUrl) window.location.href = redirectUrl;
+      return false;
+    }
+
+    function proceedToSite(url, name, id) {
+      console.log(`User clicked: ${name} (ID: ${id}) at ${new Date().toISOString()}`);
+      if (url === 'https://example.com' || url.includes('example.com')) {
+        console.warn(`TODO: Replace placeholder affiliate URL for brand ${id} (${name}) with real affiliate link`);
+      }
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'casino_click', { 'casino_name': name, 'casino_id': id });
+      }
       window.location.href = url;
     }
 
