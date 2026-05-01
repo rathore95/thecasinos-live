@@ -5,7 +5,15 @@
     { "route": "/privacy", "rewrite": "/privacy.html" },
     { "route": "/responsible-gambling", "rewrite": "/responsible-gambling.html" },
     { "route": "/contact", "rewrite": "/contact.html" },
-    { "route": "/out", "rewrite": "/out.html" }
+    { "route": "/out", "rewrite": "/out.html" },
+    { "route": "/how-we-review", "rewrite": "/how-we-review.html" },
+    { "route": "/review/*", "rewrite": "/review.html" },
+    { "route": "/ca/fast-withdrawal", "rewrite": "/ca/fast-withdrawal.html" },
+    { "route": "/ca/welcome-bonus", "rewrite": "/ca/welcome-bonus.html" },
+    { "route": "/ca/crypto", "rewrite": "/ca/crypto.html" },
+    { "route": "/nz/fast-withdrawal", "rewrite": "/nz/fast-withdrawal.html" },
+    { "route": "/nz/welcome-bonus", "rewrite": "/nz/welcome-bonus.html" },
+    { "route": "/nz/no-kyc", "rewrite": "/nz/no-kyc.html" }
   ],
   "navigationFallback": {
     "rewrite": "/index.html",

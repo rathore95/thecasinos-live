@@ -175,6 +175,38 @@ app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'contact.html'));
 });
 
+app.get('/how-we-review', (req, res) => {
+  res.sendFile(path.join(__dirname, 'how-we-review.html'));
+});
+
+app.get('/review/:slug', (req, res) => {
+  res.sendFile(path.join(__dirname, 'review.html'));
+});
+
+app.get('/ca/fast-withdrawal', (req, res) => {
+  res.sendFile(path.join(__dirname, 'ca/fast-withdrawal.html'));
+});
+
+app.get('/ca/welcome-bonus', (req, res) => {
+  res.sendFile(path.join(__dirname, 'ca/welcome-bonus.html'));
+});
+
+app.get('/ca/crypto', (req, res) => {
+  res.sendFile(path.join(__dirname, 'ca/crypto.html'));
+});
+
+app.get('/nz/fast-withdrawal', (req, res) => {
+  res.sendFile(path.join(__dirname, 'nz/fast-withdrawal.html'));
+});
+
+app.get('/nz/welcome-bonus', (req, res) => {
+  res.sendFile(path.join(__dirname, 'nz/welcome-bonus.html'));
+});
+
+app.get('/nz/no-kyc', (req, res) => {
+  res.sendFile(path.join(__dirname, 'nz/no-kyc.html'));
+});
+
 app.use(express.static('.'));
 
 app.listen(PORT, '0.0.0.0', () => {

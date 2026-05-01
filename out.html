@@ -253,6 +253,10 @@
 
     function proceedToSite(url, name, id) {
       console.log(`User clicked: ${name} (ID: ${id}) at ${new Date().toISOString()}`);
+
+      if (url === 'https://example.com' || url.includes('example.com')) {
+        console.warn(`TODO: Replace placeholder affiliate URL for brand ${id} (${name}) with real affiliate link`);
+      }
       
       if (typeof gtag !== 'undefined') {
         gtag('event', 'casino_click', {

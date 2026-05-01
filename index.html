@@ -333,8 +333,23 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#brands">Brands</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/how-we-review">How We Review</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Countries</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><h6 class="dropdown-header">Canada</h6></li>
+              <li><a class="dropdown-item" href="/ca/fast-withdrawal">⚡ Fast Withdrawal</a></li>
+              <li><a class="dropdown-item" href="/ca/welcome-bonus">💰 Best Bonus</a></li>
+              <li><a class="dropdown-item" href="/ca/crypto">₿ Crypto</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><h6 class="dropdown-header">New Zealand</h6></li>
+              <li><a class="dropdown-item" href="/nz/fast-withdrawal">⚡ Fast Withdrawal</a></li>
+              <li><a class="dropdown-item" href="/nz/welcome-bonus">💰 Best Bonus</a></li>
+              <li><a class="dropdown-item" href="/nz/no-kyc">🔓 No KYC</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -512,12 +527,20 @@
 
     async function loadBrandsData() {
       try {
+        let raw;
         if (window.CASINOS_DATA) {
-          brands = window.CASINOS_DATA;
-          return true;
+          raw = window.CASINOS_DATA;
+        } else {
+          const response = await fetch('/api/casinos');
+          raw = await response.json();
         }
-        const response = await fetch('/api/casinos');
-        brands = await response.json();
+        const seen = new Set();
+        brands = raw.filter(b => {
+          const key = b.id || b.name;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
         return true;
       } catch (error) {
         console.error('Failed to load casino data:', error);
@@ -538,12 +561,31 @@
 
     function updateHeaderWithCountry(country) {
       const heading = document.getElementById('main-heading');
-      if (country) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const geoParam = urlParams.get('geo');
+      const geoMap = { in: 'India', ca: 'Canada', nz: 'New Zealand', fi: 'Finland', gb: 'the UK', au: 'Australia' };
+      if (geoParam && geoMap[geoParam.toLowerCase()]) {
+        const geoName = geoMap[geoParam.toLowerCase()];
+        heading.textContent = `Best Online Casinos in ${geoName} 2026`;
+        document.title = `Best Online Casinos in ${geoName} 2026 | TheCasinos.live`;
+      } else if (country) {
         const cName = countryNames[country] || country;
         heading.textContent = `Best Online Casinos in ${cName} 2026`;
+        document.title = `Best Online Casinos in ${cName} 2026 | TheCasinos.live`;
       } else {
         heading.textContent = 'Best Online Casinos in 2026';
       }
+    }
+
+    function renderStars(rating) {
+      const full = Math.floor(rating);
+      const half = rating % 1 >= 0.5;
+      let stars = '';
+      for (let i = 0; i < full; i++) stars += '<i class="fas fa-star" style="color:#ffc107;font-size:0.85rem;"></i>';
+      if (half) stars += '<i class="fas fa-star-half-alt" style="color:#ffc107;font-size:0.85rem;"></i>';
+      const empty = 5 - full - (half ? 1 : 0);
+      for (let i = 0; i < empty; i++) stars += '<i class="far fa-star" style="color:#ffc107;font-size:0.85rem;"></i>';
+      return `<span class="me-1">${stars}</span><small style="color:#555;">${rating.toFixed(1)}</small>`;
     }
 
     function createBrandCard(b, displayNumber) {
@@ -560,12 +602,18 @@
         licenseText = `Licensed and regulated under ${license.regulator} (${license.number}).`;
       }
 
+      const slug = b.slug || b.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+      const rating = b.rating || 4.0;
       card.innerHTML = `
         <div class="d-flex align-items-center justify-content-between flex-wrap">
           <div class="d-flex align-items-center">
             <div class="badge-number me-3">${displayNumber}</div>
-            <img src="${b.logo}" alt="${b.name} Casino Review" class="brand-logo me-3">
+            <div class="me-3 text-center" style="cursor:pointer;" onclick="window.location='/review/${slug}'">
+              <img src="${b.logo}" alt="${b.name} Casino Review" class="brand-logo d-block">
+              <div class="mt-1">${renderStars(rating)}</div>
+            </div>
             <div>
+              <a href="/review/${slug}" style="color:inherit;text-decoration:none;font-weight:600;">${b.name}</a>
               <p class="mb-0">${b.offer}</p>
             </div>
           </div>

@@ -1,0 +1,227 @@
+This is a React casino review site. I need targeted fixes only. Do NOT redesign anything. Here is exactly what needs to be fixed and built:
+
+---
+
+CRITICAL FIX 1 — Fix Duplicate Brands on the Listing Page
+
+The current brand list is showing the same casino brands (Chilistakes, Flagman) multiple times with different offers. This looks spammy.
+
+Fix the data source so each brand appears ONLY ONCE. If brands are being pulled from an array or API, deduplicate by brand ID or brand name. The final list should show each casino brand exactly one time with its primary/best offer only.
+
+---
+
+CRITICAL FIX 2 — Fix All Outbound Affiliate Links
+
+The current outbound redirect goes to brand15.com which returns ERR_CONNECTION_RESET. All affiliate links are broken.
+
+For now, replace all outbound hrefs on the redirect page (/out?brand=X) with a placeholder: https://example.com
+
+Also add a console.warn log: "TODO: Replace placeholder affiliate URL for brand [X] with real affiliate link"
+
+This makes it clear which brands need real links without breaking the flow.
+
+---
+
+CRITICAL FIX 3 — Make Homepage Headline Dynamic by GEO
+
+The homepage H1 is hardcoded as "Best Online Casinos in India 2026". This needs to be dynamic based on the URL parameter or route.
+
+Implement this logic:
+- Default (no param): "Best Online Casinos 2026"
+- URL has ?geo=in OR route is /in: "Best Online Casinos in India 2026"
+- URL has ?geo=ca OR route is /ca: "Best Online Casinos in Canada 2026"
+- URL has ?geo=nz OR route is /nz: "Best Online Casinos in New Zealand 2026"
+- URL has ?geo=fi OR route is /fi: "Best Online Casinos in Finland 2026"
+
+The subtitle "Independent Reviews & Comparisons" stays the same always.
+
+Also update the page <title> meta tag dynamically to match the H1.
+
+---
+
+CRITICAL FIX 4 — Add Individual Casino Review Pages (Bridge Page Fix)
+
+Currently clicking a casino card goes directly to /out?brand=X skipping any review content. Google Ads policy requires a real review page between the listing and the outbound redirect. Without this, ads will be disapproved.
+
+Create a dynamic route: /review/:brandSlug
+
+Each review page must have these sections in order:
+
+1. HERO SECTION
+- Casino name (H1)
+- Star rating (e.g. 4.8/5 shown as filled stars)
+- Bonus headline (e.g. "100% up to €500 + 200 Free Spins")
+- Two buttons: "Visit Casino →" (goes to /out?brand=X) and "Read Full Review ↓" (smooth scrolls to review body)
+- Disclaimer: "18+ | New Players Only | T&Cs Apply | Gamble Responsibly"
+
+2. QUICK FACTS TABLE
+Displayed as a 2-column table:
+- License | [License authority + number]
+- Founded | [Year]
+- Min Deposit | [Amount]
+- Withdrawal Time | [Timeframe]
+- Payment Methods | [Comma-separated list]
+- Games Available | [Number]
+
+3. PROS & CONS
+Two columns side by side:
+- Left: 4 green checkmark pros
+- Right: 2 red X cons
+
+4. REVIEW BODY
+Three paragraphs of review text (about 100 words each). This can be placeholder text for now like "TheCasinos.live tested [Casino Name] by creating a real account, making a deposit, and testing withdrawals. Here is what we found..."
+
+5. BONUS DETAILS BOX
+Yellow/highlighted box showing:
+- Offer: [bonus headline]
+- Wagering: [e.g. 35x]
+- Min Deposit to Activate: [amount]
+- Max Bet with Bonus Active: [amount]
+- Validity: [days]
+- Fine print: "New players only. 18+. T&Cs apply."
+
+6. FINAL VERDICT
+- Short paragraph summary
+- Star rating displayed large
+- "Visit [Casino Name] →" button (goes to /out?brand=X)
+- "← Back to all casinos" link
+
+7. PAGE FOOTER DISCLAIMER
+"This review is based on independent testing by the TheCasinos.live editorial team. We may receive commissions if you register via our links. 18+ only. Gamble responsibly."
+
+Wire the casino listing cards so clicking the casino LOGO or NAME goes to /review/:brandSlug, and the "Visit Casino" button still goes directly to /out?brand=X.
+
+Prepopulate review data for these brands (create a reviewData.js config file):
+- Chilistakes: License: MGA/B2C/331/2016, Founded: 2020, Min Deposit: $10, Withdrawal: 0-24hrs, Rating: 4.7
+- AllySpin: License: Curacao 8048/JAZ, Founded: 2022, Min Deposit: €10, Withdrawal: 24hrs, Rating: 4.5
+- Flagman: License: Curacao 8048/JAZ, Founded: 2021, Min Deposit: €10, Withdrawal: 0-48hrs, Rating: 4.3
+
+---
+
+FIX 5 — Add Star Ratings to Listing Cards
+
+Each casino card on the listing page currently shows no rating. Add a star rating display to each card — show it as filled/empty stars out of 5 plus the numeric score (e.g. ★★★★½ 4.7).
+
+Position it directly below the casino logo on the left side of the card.
+
+---
+
+FIX 6 — Add "How We Review" Page + Add to Navigation
+
+Create a new page at /how-we-review
+
+Sections:
+1. H1: "How We Review Online Casinos"
+2. Intro: "Every casino on TheCasinos.live is tested by our editorial team. We open real accounts, make real deposits, test withdrawals, and contact support before publishing any recommendation."
+3. "Our 7-Point Review Process" — show as icon grid cards:
+   - 🏛️ License Verification — We check every license against the issuing authority's public register
+   - 🎮 Game Testing — We play slots, live casino, and table games to assess quality and fairness
+   - 🎁 Bonus Analysis — We read full T&Cs and calculate real bonus value after wagering requirements
+   - 💳 Payment Testing — We make real deposits and withdrawal requests and time them
+   - 💬 Support Testing — We contact live chat and email support and score response quality
+   - 📱 Mobile Testing — We test on iOS and Android
+   - 🔒 Security Audit — We verify SSL, data protection, and responsible gambling tools
+4. "Our Editorial Promise": "Our rankings are never influenced by affiliate commission rates. All casinos are held to the same standard regardless of commercial relationship."
+5. "Meet Our Team" — 3 reviewer cards with placeholder avatar, name, title, experience:
+   - Alex Morgan | Senior Casino Reviewer | 8 Years Experience
+   - Sara Klein | Bonus & Payments Analyst | 5 Years Experience
+   - David Osei | Security & Licensing Expert | 6 Years Experience
+
+Add "How We Review" to the main navigation bar between "Brands" and "About".
+
+---
+
+FIX 7 — Intent-Based GEO Landing Pages
+
+Create 6 landing pages. Each shows only 3 filtered casino cards (reuse existing card component), has a specific headline, intro, and comparison table. These are the PPC landing pages.
+
+CANADA PAGES:
+
+/ca/fast-withdrawal
+- H1: "Fastest Paying Online Casinos in Canada 2026"
+- Intro: "We tested withdrawals at 15+ casinos to find the fastest-paying options for Canadian players. Every casino below processed our test withdrawal in under 24 hours via Interac or e-Transfer."
+- Show cards for: Chilistakes, AllySpin, Flagman (with badge "⚡ Fast Payout")
+- Add comparison table: Casino | Avg Withdrawal | Min Withdrawal | Methods | Our Score
+
+/ca/welcome-bonus
+- H1: "Best Casino Welcome Bonuses in Canada 2026"  
+- Intro: "Not all bonuses are equal. We calculate real value after wagering requirements. These are the best-value welcome offers available to Canadian players right now."
+- Show cards for: Chilistakes, AllySpin, Flagman (with badge "💰 Best Value")
+- Add comparison table: Casino | Bonus | Wagering | Free Spins | Expiry
+
+/ca/crypto
+- H1: "Best Crypto Casinos in Canada 2026"
+- Intro: "Crypto casinos give Canadian players faster withdrawals, lower fees, and better privacy. These are the top crypto-accepting casinos we've verified for Canadian players."
+- Show cards for: Chilistakes, Flagman, AllySpin (with badge "₿ Crypto Accepted")
+- Add FAQ box: "Is crypto gambling legal in Canada?" — 3 sentence answer
+
+NEW ZEALAND PAGES:
+
+/nz/fast-withdrawal
+- H1: "Fastest Paying Online Casinos in New Zealand 2026"
+- Intro: "We opened NZD accounts and tested withdrawal speeds at each casino below. All paid out in under 24 hours. Ranked by average withdrawal time."
+- Show cards for: Chilistakes, AllySpin, Flagman (badge "⚡ Sub-24hr")
+- Add same withdrawal comparison table
+
+/nz/welcome-bonus
+- H1: "Best Casino Welcome Bonuses for NZ Players 2026"
+- Intro: "Finding a casino that accepts NZD and offers a fair bonus is harder than it looks. We've tested these ourselves — all accept NZD and have wagering requirements under 40x."
+- Show cards for: AllySpin, Chilistakes, Flagman (badge "💰 NZD Bonus")
+- Add same bonus comparison table
+
+/nz/no-kyc
+- H1: "Best No KYC Casinos for New Zealand Players 2026"
+- Intro: "No KYC casinos let NZ players deposit and withdraw without submitting identity documents. Faster, more private, and no lengthy approval waits. We verified each casino's no-KYC policy below."
+- Show cards for: Flagman, Chilistakes, AllySpin (badge "🔓 No KYC")
+- Add FAQ: "What is No KYC?" — 4 sentence explanation
+- Add disclaimer: "Some casinos may request documents for large withdrawals above a threshold."
+
+ALL 6 PAGES MUST INCLUDE:
+- Red 18+ bar at very top: "18+ | Gambling can be addictive | Play Responsibly | T&Cs Apply"
+- Affiliate disclosure below intro: "ℹ️ We may earn commissions if you sign up via our links. Rankings are editorially independent."
+- Breadcrumb: Home > Canada > Fast Withdrawal (or equivalent)
+- "Last Updated: May 2026" below H1
+- Responsible gambling section at bottom:
+  - Canada pages: "Need help? ConnexOntario: 1-866-531-2600 | connexontario.ca"
+  - NZ pages: "Need help? Problem Gambling Foundation NZ: 0800 664 262 | pgf.nz"
+- Standard site header and footer
+
+---
+
+FIX 8 — Navigation Countries Dropdown
+
+Add a "Countries" dropdown to the main nav (between How We Review and About):
+
+Countries ▾
+  Canada
+    → Fast Withdrawal (/ca/fast-withdrawal)
+    → Best Bonus (/ca/welcome-bonus)
+    → Crypto (/ca/crypto)
+  New Zealand
+    → Fast Withdrawal (/nz/fast-withdrawal)
+    → Best Bonus (/nz/welcome-bonus)
+    → No KYC (/nz/no-kyc)
+
+---
+
+FIX 9 — Meta Tags for All New Pages
+
+/ca/fast-withdrawal: title="Fastest Paying Casinos Canada 2026 | Withdrawal Tested" description="We tested 15+ casinos to find the fastest withdrawals for Canadian players. All pay within 24 hours. Compare and claim your bonus."
+
+/ca/welcome-bonus: title="Best Casino Bonuses Canada 2026 | Real Value Ranked" description="Compare the best welcome bonuses for Canadian players. We calculate real value after wagering. Updated May 2026."
+
+/ca/crypto: title="Best Crypto Casinos Canada 2026 | BTC & ETH Accepted" description="Top crypto-accepting casinos for Canadian players. Fast BTC withdrawals, better privacy, no bank delays. Reviewed May 2026."
+
+/nz/fast-withdrawal: title="Fastest Paying Casinos New Zealand 2026 | NZD Tested" description="Fastest withdrawing casinos for NZ players. Tested with real NZD accounts. All pay out in under 24 hours."
+
+/nz/welcome-bonus: title="Best Casino Bonuses New Zealand 2026 | NZD Accepted" description="Best welcome bonuses for NZ players. NZD accepted, wagering under 40x, high value. Tested May 2026."
+
+/nz/no-kyc: title="No KYC Casinos New Zealand 2026 | No ID Required" description="Best no KYC casinos for NZ players. No documents needed, instant withdrawals, full privacy. Verified May 2026."
+
+/how-we-review: title="How We Review Casinos | Our Methodology | TheCasinos.live" description="See exactly how our team tests online casinos. Real accounts, real deposits, real withdrawals. Full methodology explained."
+
+/review/:brandSlug: title="[Casino Name] Review 2026 | Bonus, Rating & Full Test" description="Full independent review of [Casino Name]. Tested by our team — bonus, withdrawals, support, and games all evaluated."
+
+---
+
+After completing all tasks, list every file created or modified.
